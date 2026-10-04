@@ -22,7 +22,7 @@ public final class BinaryConvertersRegistry {
      *  Returns the underlying bidirectional converters registry.
      *
      * @return the underlying bidirectional converters registry
-     *
+     * @since 1.0.0
      *
      */
     @Getter
