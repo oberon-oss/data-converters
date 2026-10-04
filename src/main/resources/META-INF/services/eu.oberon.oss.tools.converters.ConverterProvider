@@ -1,0 +1,13 @@
+eu.oberon.oss.tools.converters.fixed.BooleanConverterProvider
+eu.oberon.oss.tools.converters.fixed.DoubleConverterProvider
+eu.oberon.oss.tools.converters.fixed.FloatConvertProvider
+eu.oberon.oss.tools.converters.fixed.SignedIntegerConverterProvider
+eu.oberon.oss.tools.converters.fixed.SignedLongConverterProvider
+eu.oberon.oss.tools.converters.fixed.SignedShortConverterProvider
+eu.oberon.oss.tools.converters.fixed.UnsignedByteConverterProvider
+eu.oberon.oss.tools.converters.fixed.UnsignedIntegerConverterProvider
+eu.oberon.oss.tools.converters.fixed.UnsignedLongConverterProvider
+eu.oberon.oss.tools.converters.fixed.UnsignedShortConverterProvider
+eu.oberon.oss.tools.converters.varlen.text.CharConverterProvider
+eu.oberon.oss.tools.converters.varlen.text.CharacterArrayConverterProvider
+eu.oberon.oss.tools.converters.varlen.text.StringConverterProvider
