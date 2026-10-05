@@ -15,8 +15,14 @@ permissions:
     contents: read
     pages: write
     id-token: write
+
 jobs:
     pipeline:
+        # Only run if it is a release event, a workflow dispatch, or a branch push (not a standalone tag push if releases handle tags)
+        if: |
+            github.event_name == 'release' ||
+            github.event_name == 'workflow_dispatch' ||
+            (github.event_name == 'push' && startsWith(github.ref, 'refs/heads/'))
         uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@v2.0.5
         with:
             profiles: 'lombok,jacoco,activate-oberon-nexus'
