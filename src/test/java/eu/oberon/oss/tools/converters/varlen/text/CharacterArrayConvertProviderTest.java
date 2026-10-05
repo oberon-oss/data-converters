@@ -483,7 +483,7 @@ class CharacterArrayConvertProviderTest {
                     () -> assertArrayEquals(first, second)
             );
 
-            // Mutating the returned array must not affect subsequent calls.
+            // Mutating the returned array must not affect later calls.
             first[0] = (byte) 0x42;
             assertArrayEquals(new byte[]{0x41},
                     toBytes.convert(input, StandardCharsets.US_ASCII, ByteOrder.BIG_ENDIAN));
@@ -502,7 +502,7 @@ class CharacterArrayConvertProviderTest {
                     () -> assertArrayEquals(first, second)
             );
 
-            // Mutating the returned array must not affect subsequent calls.
+            // Mutating the returned array must not affect later calls.
             first[0] = 'Z';
             assertArrayEquals(new Character[]{'A', 'B'},
                     toObject.convert(bytes, StandardCharsets.US_ASCII, ByteOrder.BIG_ENDIAN));

@@ -66,17 +66,7 @@ class AbstractValueRetrieverTest {
         return "TEST_VALUE_TYPE_" + UUID.randomUUID();
     }
 
-    private static final class TestValueRetriever implements ValueRetriever {
+    private record TestValueRetriever(String valueTypeName) implements ValueRetriever {
 
-        private final String valueTypeName;
-
-        private TestValueRetriever(String valueTypeName) {
-            this.valueTypeName = valueTypeName;
-        }
-
-        @Override
-        public String getValueTypeName() {
-            return valueTypeName;
-        }
     }
 }

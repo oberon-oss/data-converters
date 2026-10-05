@@ -11,11 +11,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class LastUsedItemListConverterFactoryTest {
 
     private LastUsedItemListConverterFactory factory;
-    private ConvertersRegistry registry;
 
     @BeforeEach
     void setUp() {
-        registry = new ConvertersRegistry();
+        ConvertersRegistry registry = new ConvertersRegistry();
         factory = new LastUsedItemListConverterFactory(registry);
     }
 

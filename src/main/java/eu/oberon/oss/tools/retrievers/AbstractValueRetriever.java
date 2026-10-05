@@ -31,7 +31,7 @@ public abstract class AbstractValueRetriever implements ValueRetriever {
     }
 
     @Override
-    public String getValueTypeName() {
+    public String valueTypeName() {
         return valueTypeNames.name();
     }
 
@@ -78,7 +78,7 @@ public abstract class AbstractValueRetriever implements ValueRetriever {
      */
     public static boolean registerRetriever(ValueRetriever retriever) {
         Objects.requireNonNull(retriever, "Parameter: retriever");
-        String name = retriever.getValueTypeName();
+        String name = retriever.valueTypeName();
         boolean replacedExisting = false;
 
         if (RETRIEVER_HASH_MAP.containsKey(name)) {

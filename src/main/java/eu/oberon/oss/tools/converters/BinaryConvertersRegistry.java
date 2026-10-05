@@ -3,7 +3,6 @@ package eu.oberon.oss.tools.converters;
 import eu.oberon.oss.tools.ValueTypeNames;
 import eu.oberon.oss.tools.converters.binary.BinaryConverter;
 import lombok.Getter;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.nio.ByteOrder;
@@ -17,6 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @since 1.0.0
  */
 public final class BinaryConvertersRegistry {
+    // @formatter:off
     /**
      * -- GETTER --
      *  Returns the underlying bidirectional converters registry.
@@ -25,6 +25,7 @@ public final class BinaryConvertersRegistry {
      * @since 1.0.0
      *
      */
+    // @formatter:on
     @Getter
     private final BiDirectionalConvertersRegistry biDirectionalConvertersRegistry;
     private final ConcurrentHashMap<String, BinaryConverter<?>> nameToConverterMap;
@@ -45,7 +46,7 @@ public final class BinaryConvertersRegistry {
      *
      * @since 1.0.0
      */
-    public BinaryConvertersRegistry(@NotNull BiDirectionalConvertersRegistry biDirectionalConvertersRegistry) {
+    public BinaryConvertersRegistry(BiDirectionalConvertersRegistry biDirectionalConvertersRegistry) {
         this.biDirectionalConvertersRegistry = Objects.requireNonNull(biDirectionalConvertersRegistry, "Parameter: biDirectionalConvertersRegistry");
         this.nameToConverterMap = new ConcurrentHashMap<>();
     }
@@ -146,9 +147,10 @@ public final class BinaryConvertersRegistry {
      *
      * @param converter The binary converter to register.
      *
+     * @throws NullPointerException If the 'converter' parameter value is null.
      * @since 1.0.0
      */
-    public void registerConverter(@NotNull BinaryConverter<?> converter) {
+    public void registerConverter(BinaryConverter<?> converter) {
         Objects.requireNonNull(converter, "Parameter: converter");
         biDirectionalConvertersRegistry.registerConverter(converter);
     }
@@ -159,9 +161,10 @@ public final class BinaryConvertersRegistry {
      * @param name      The value type name.
      * @param converter The binary converter.
      *
+     * @throws NullPointerException If the 'name' or the 'converter' parameter value is null.
      * @since 1.0.0
      */
-    public void registerConverter(String name, @NotNull BinaryConverter<?> converter) {
+    public void registerConverter(String name, BinaryConverter<?> converter) {
         Objects.requireNonNull(name, "Parameter: name");
         Objects.requireNonNull(converter, "Parameter: converter");
         nameToConverterMap.put(name, converter);

@@ -33,8 +33,8 @@ class AbstractBinaryConverterTest {
     @Test
     @DisplayName("Constructor throws NullPointerException when required parameters are null")
     void testConstructorNullChecks() {
-        BiFunction<Integer, ByteOrder, byte[]> toBytes = (val, order) -> new byte[4];
-        BiFunction<byte[], ByteOrder, Integer> fromBytes = (bytes, order) -> 0;
+        BiFunction<Integer, ByteOrder, byte[]> toBytes = (_, _) -> new byte[4];
+        BiFunction<byte[], ByteOrder, Integer> fromBytes = (_, _) -> 0;
 
         NullPointerException exType = assertThrows(NullPointerException.class, () ->
                 new TestIntBinaryConverter(null, toBytes, fromBytes));
