@@ -41,7 +41,7 @@ class StringConverterProviderTest {
     private final TextToByteConverter<String> toBytes = provider.getToByteConverter();
 
     /**
-     * Same-package subclass used to widen visibility of the protected hook methods so they can be asserted directly.
+     * Same-package subclass used to widen the visibility of the protected hook methods so they can be asserted directly.
      */
     private static final class Exposed extends StringConverterProvider {
         String callFromString(String value) {
@@ -487,7 +487,7 @@ class StringConverterProviderTest {
                     () -> assertArrayEquals(first, second)
             );
 
-            // Mutating the returned array must not affect subsequent calls.
+            // Mutating the returned array must not affect further calls.
             first[0] = (byte) 0x42;
             assertArrayEquals(new byte[]{0x41},
                     toBytes.convert("A", StandardCharsets.US_ASCII, ByteOrder.BIG_ENDIAN));

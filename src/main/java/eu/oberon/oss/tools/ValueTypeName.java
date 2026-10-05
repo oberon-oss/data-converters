@@ -14,6 +14,6 @@ public interface ValueTypeName {
      *
      * @since 1.0.0
      */
-    String getValueTypeName();
+    String valueTypeName();
 
 }
