@@ -29,7 +29,7 @@ class ConvertersRegistryTest {
                 Arguments.of(Byte.class, "127", (byte) 127),
                 Arguments.of(Short.class, "32767", (short) 32767),
                 Arguments.of(Boolean.class, "true", true),
-                Arguments.of(Float.class, "1.2345", (float) 1.2345),
+                Arguments.of(Float.class, "1.2345", 1.2345f),
                 Arguments.of(Double.class, "56.789", 56.789),
                 Arguments.of(ConfigTestEnum.class, "VALUE_C", ConfigTestEnum.VALUE_C)
         );

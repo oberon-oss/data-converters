@@ -12,7 +12,7 @@
 
     <groupId>eu.oberon-oss.tools</groupId>
     <artifactId>data-converters</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 
     <name>Data Converters and Binary Data Reader library</name>
     <description>
