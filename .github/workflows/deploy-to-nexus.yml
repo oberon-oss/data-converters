@@ -17,7 +17,7 @@ jobs:
     pipeline:
         uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@v2.0.5
         with:
-            profiles: 'lombok'
+            profiles: 'lombok,jacoco,activate-oberon-nexus'
         secrets:
             NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
             NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
