@@ -1,34 +1,29 @@
 name: CI/CD Pipeline
 
 on:
-    release:
-        types: [ published ]
     push:
         branches:
-            - main
+            - '**'
     pull_request:
         branches:
             - main
+    release:
+        types: [ published ]
     workflow_dispatch:
 
 permissions:
     contents: read
-    pages: write
+    packages: write
     id-token: write
 
 jobs:
     pipeline:
-        # Only run if it is a release event, a workflow dispatch, or a branch push (not a standalone tag push if releases handle tags)
-        if: |
-            github.event_name == 'pull_request' ||
-            github.event_name == 'release' ||
-            github.event_name == 'workflow_dispatch' ||
-            (github.event_name == 'push' && startsWith(github.ref, 'refs/heads/'))
-        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@26b0126e2bb08761253457dabd82a848fc76c55e # v2.0.5
-
+        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@894fbd1f4e9c137702ebf131cc35d7c9464c3dab
         with:
-            profiles: 'lombok,jacoco,activate-oberon-nexus'
+            java-version: '25'
+            profiles: 'lombok,jacoco'
+            deploy-profiles: 'lombok,activate-oberon-nexus'
         secrets:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
             NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
