@@ -5,11 +5,7 @@ on:
         types: [ published ]
     push:
         branches:
-            - 'feature/**'
-            - 'features/**'
-            - 'bugfix/**'
-            - 'bugfixes/**'
-            - 'bug-fixes/**'
+            - main
     pull_request:
         branches:
             - main
