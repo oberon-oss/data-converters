@@ -6,7 +6,9 @@ on:
     push:
         branches:
             - main
-            - master
+    pull_request:
+        branches:
+            - main
     workflow_dispatch:
 
 permissions:
@@ -18,10 +20,12 @@ jobs:
     pipeline:
         # Only run if it is a release event, a workflow dispatch, or a branch push (not a standalone tag push if releases handle tags)
         if: |
+            github.event_name == 'pull_request' ||
             github.event_name == 'release' ||
             github.event_name == 'workflow_dispatch' ||
             (github.event_name == 'push' && startsWith(github.ref, 'refs/heads/'))
-        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@v2.0.5
+        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@26b0126e2bb08761253457dabd82a848fc76c55e # v2.0.5
+
         with:
             profiles: 'lombok,jacoco,activate-oberon-nexus'
         secrets:
