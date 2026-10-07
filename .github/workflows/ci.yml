@@ -3,10 +3,12 @@ name: CI/CD Pipeline
 on:
     push:
         branches:
-            - '**'
+            - main
+            - master
     pull_request:
         branches:
             - main
+            - master
     release:
         types: [ published ]
     workflow_dispatch:
@@ -18,7 +20,7 @@ permissions:
 
 jobs:
     pipeline:
-        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@894fbd1f4e9c137702ebf131cc35d7c9464c3dab
+        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@8b4d9042dc4700b2da328dcce9e30dca3e617997
         with:
             java-version: '25'
             profiles: 'lombok,jacoco'
