@@ -20,7 +20,7 @@ permissions:
 
 jobs:
     pipeline:
-        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@5bb2bd5521b94d4e6e41a4bd77ad01ba901ac186
+        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@c299eeb0f905b62e66c4abe6b308856d96e39713
         with:
             java-version: '25'
             profiles: 'lombok,jacoco'
