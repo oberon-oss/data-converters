@@ -17,10 +17,11 @@ permissions:
     contents: read
     packages: write
     id-token: write
+    pages: write
 
 jobs:
     pipeline:
-        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@51f4843aeb5059313db5653135ee73f068bd12ef
+        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@340885244b67a4771510fccd5807cdc3a33bc9f2
         with:
             java-version: '25'
             profiles: 'lombok,jacoco'
