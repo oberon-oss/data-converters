@@ -31,7 +31,7 @@ class AbstractConverterProviderTest {
             BufferedReader reader = new BufferedReader(new FileReader(path));
             String line;
             while ((line = reader.readLine()) != null) {
-                LOGGER.debug("Loading provider {}", line);
+                LOGGER.debug("Loading provider, line= {}", line);
                 //noinspection unchecked
                 Class<ConverterProvider> provider = (Class<ConverterProvider>) classLoader.loadClass(line);
                 ConverterProvider loadedProvider = provider.getDeclaredConstructor().newInstance();

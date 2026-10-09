@@ -2,13 +2,11 @@ name: CI/CD Pipeline
 
 on:
     push:
-        branches-ignore:
-            - 'main'
-            - 'master'
+        branches:
+            - main
     pull_request:
         branches:
-            - 'main'
-            - 'master'
+            - main
     release:
         types: [ published ]
     workflow_dispatch:
