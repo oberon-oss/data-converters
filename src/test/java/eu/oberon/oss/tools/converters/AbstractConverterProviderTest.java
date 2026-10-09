@@ -3,6 +3,8 @@ package eu.oberon.oss.tools.converters;
 import eu.oberon.oss.tools.ValueTypeNames;
 import eu.oberon.oss.tools.converters.fixed.BooleanConverterProvider;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,6 +16,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AbstractConverterProviderTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractConverterProviderTest.class);
 
     private static final String SERVICE_NAME = "src/main/resources/META-INF/services/eu.oberon.oss.tools.converters.ConverterProvider";
 
@@ -28,6 +31,7 @@ class AbstractConverterProviderTest {
             BufferedReader reader = new BufferedReader(new FileReader(path));
             String line;
             while ((line = reader.readLine()) != null) {
+                LOGGER.debug("Loading provider {}", line);
                 //noinspection unchecked
                 Class<ConverterProvider> provider = (Class<ConverterProvider>) classLoader.loadClass(line);
                 ConverterProvider loadedProvider = provider.getDeclaredConstructor().newInstance();
