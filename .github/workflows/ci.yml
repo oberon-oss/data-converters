@@ -19,12 +19,18 @@ permissions:
 
 jobs:
     pipeline:
-        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@25e228ffce29fa809f9de1302f0b229f2f6c8d03
+        uses: oberon-oss/github-workflows/.github/workflows/maven-pipeline.yml@e737cd07562949d1631128961b6b2ee583235512
         with:
             java-version: '25'
             profiles: 'lombok,jacoco'
             deploy-profiles: 'lombok,deploy-to-nexus'
         secrets:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            # Oberon OSS nexus credentials
             NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
             NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+            # Maven Central credentials
+            CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+            CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+            GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+            GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
