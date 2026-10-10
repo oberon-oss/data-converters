@@ -7,12 +7,12 @@
     <parent>
         <groupId>eu.oberon-oss</groupId>
         <artifactId>project-settings-parent</artifactId>
-        <version>4.25.4</version>
+        <version>4.25.5</version>
     </parent>
 
     <groupId>eu.oberon-oss.tools</groupId>
     <artifactId>data-converters</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>Data Converters and Binary Data Reader library</name>
     <description>

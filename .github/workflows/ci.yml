@@ -23,7 +23,7 @@ jobs:
         with:
             java-version: '25'
             profiles: 'lombok,jacoco'
-            deploy-profiles: 'lombok,activate-oberon-nexus'
+            deploy-profiles: 'lombok,deploy-to-nexus'
         secrets:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
