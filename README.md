@@ -12,6 +12,8 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=oberon-oss_data-converters&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=oberon-oss_data-converters)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=oberon-oss_data-converters&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=oberon-oss_data-converters)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=oberon-oss_data-converters&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=oberon-oss_data-converters)
+
+[https://github.com/go-gitea/gitea/releases](https://github.com/oberon-oss/data-converters/)/latest
 ---
 
 # Data Converters and Binary Data Reader
