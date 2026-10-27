@@ -1,4 +1,5 @@
 # Build status
+[![CI/CD Pipeline](https://github.com/oberon-oss/data-converters/actions/workflows/ci.yml/badge.svg)](https://github.com/oberon-oss/data-converters/actions/workflows/ci.yml)
 
 [![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=oberon-oss_data-converters&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=oberon-oss_data-converters)
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=oberon-oss_data-converters&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=oberon-oss_data-converters)
